@@ -10,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
   useEffect(() => {
     if (cookies.jwt) {
-      navigate("/");
+      navigate("/Home");
     }
   }, [cookies, navigate]);
 
@@ -35,7 +35,7 @@ function Login() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-          navigate("/");
+          navigate("/Home");
         }
       }
     } catch (ex) {

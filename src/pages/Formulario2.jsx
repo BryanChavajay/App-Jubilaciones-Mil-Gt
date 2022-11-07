@@ -5,11 +5,10 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import Navbar from "../components/Navbar2";
 
-//Nota: debe cambiarse la ruta para la petición al backend
-
-function Home() {
+const Formulario2 = () => {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
+
   useEffect(() => {
     const verifyUser = async () => {
       if (!cookies.jwt) {
@@ -25,29 +24,28 @@ function Home() {
         if (!data.status) {
           removeCookie("jwt");
           navigate("/login");
-        } else
-          toast(`Hi ${data.user} 🦄`, {
-            theme: "dark",
-          });
+        }
       }
     };
     verifyUser();
   }, [cookies, navigate, removeCookie]);
 
-  const logOut = () => {
-    removeCookie("jwt");
-    navigate("/login");
-  };
   return (
     <>
       <Navbar />
-      <div className="private">
-        <h1>Bienvenido</h1>
-        <button onClick={logOut}>Cerar Sesion</button>
+      <div className="form">
+        <div className="form-input">
+          <input
+            className="input"
+            placeholder="Nombre"
+            required=""
+            type="text"
+          />
+          <span className="input-border"></span>
+        </div>
       </div>
-      <ToastContainer />
     </>
   );
-}
+};
 
-export default Home;
+export default Formulario2;
