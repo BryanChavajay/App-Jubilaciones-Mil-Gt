@@ -6,31 +6,6 @@ import "../styles/Navbar.css";
 const NavbarUtil = () => {
   return (
     <>
-      {/* <Navbar className="navBg" bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand as={Link} to="/">
-            Jubilaciones Militares
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">
-                Acerca de
-              </Nav.Link>
-              <Nav.Link as={Link} to="/Ayuda">
-                Ayuda
-              </Nav.Link>
-              <Nav.Link as={Link} to="/Informacion">
-                Informacion
-              </Nav.Link>
-              <Nav.Link as={Link} to="/login">
-                Ingresar
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
-
       <header className="header">
         <div className="logo">
           <img src={img} alt="Logo de la marca" />
@@ -38,19 +13,27 @@ const NavbarUtil = () => {
         <nav>
           <ul className="nav-links">
             <li>
-              <a href="/">Acerca de</a>
+              {/* <a href="/">Acerca de</a> */}
+              <Link to="/"> Acerca de </Link>
             </li>
             <li>
-              <a href="/Ayuda">Servicios</a>
+              {/* <a href="/Ayuda">Servicios</a> */}
+              <Link to="/Ayuda"> Servicios </Link>
             </li>
             <li>
-              <a href="/Informacion">Informacion</a>
+              {/* <a href="/Informacion">Informacion</a> */}
+              <Link to="/Informacion"> Informacion </Link>
             </li>
           </ul>
         </nav>
-        <a className="btn" href="/login">
+        {/* <a className="btn" href="/login">
           <button>Login</button>
-        </a>
+        </a> */}
+        <div className="btn">
+          <button>
+            <Link to="/login"> Login </Link>
+          </button>
+        </div>
       </header>
     </>
   );
