@@ -22,7 +22,7 @@ export default function App() {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/oficial" element={<Form1 />} />
         <Route exact path="/especialista" element={<Form2 />} />
-        <Route exact path="*" element={<Navigate replace to="/" />} />
+        {/* <Route exact path="*" element={<Navigate replace to="/" />} /> */}
       </Routes>
     </BrowserRouter>
   );
