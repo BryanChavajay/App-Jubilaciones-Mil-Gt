@@ -96,6 +96,11 @@ function Login() {
               <Link to="/register"> Registrate </Link>
             </span>
           </div>
+          <div className="span-form">
+            <span>
+              <Link to="/"> Regresar a inicio </Link>
+            </span>
+          </div>
         </form>
       </div>
       <ToastContainer />

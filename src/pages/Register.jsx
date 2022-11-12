@@ -93,6 +93,11 @@ function Register() {
               <Link to="/login"> Ingresar </Link>
             </span>
           </div>
+          <div className="span-form">
+            <span>
+              <Link to="/"> Regresar a inicio </Link>
+            </span>
+          </div>
         </div>
       </form>
       <ToastContainer />
