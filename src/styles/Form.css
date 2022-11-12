@@ -1,4 +1,5 @@
 .form {
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -8,7 +9,7 @@
 }
 
 .form-input {
-    --width-of-input: 200px;
+    --width-of-input: 500px;
     --border-height: 1px;
     --border-before-color: rgba(221, 221, 221, 0.39);
     --border-after-color: #5891ff;
@@ -22,7 +23,7 @@
     color: #fff;
     font-size: 0.9rem;
     background-color: transparent;
-    width: 100%;
+    width: 500px;
     box-sizing: border-box;
     padding-inline: 0.5em;
     padding-block: 0.7em;
@@ -60,3 +61,43 @@ input:focus~.input-border {
 /* input:valid ~ .input-border{
      width: 100%;
    } */
+
+.buttons-container {
+    display: flex;
+    gap: 25px;
+}
+
+.button {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+}
+
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+
+.button:hover .button_top {
+    transform: translateY(-0.33em);
+}
+
+.button:active .button_top {
+    transform: translateY(0);
+}
+
+label {
+    color: #fff;
+}

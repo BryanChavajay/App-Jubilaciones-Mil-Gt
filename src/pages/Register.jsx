@@ -6,11 +6,12 @@ import { Link, useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 
 function Register() {
+  const backend = import.meta.env.VITE_BACKEND;
   const [cookies] = useCookies(["cookie-name"]);
   const navigate = useNavigate();
   useEffect(() => {
     if (cookies.jwt) {
-      navigate("/");
+      navigate("/Home");
     }
   }, [cookies, navigate]);
 
@@ -23,7 +24,7 @@ function Register() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/register",
+        `${backend}/register`,
         {
           ...values,
         },
@@ -35,7 +36,7 @@ function Register() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-          navigate("/");
+          navigate("/Home");
         }
       }
     } catch (ex) {

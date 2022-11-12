@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "../styles/Login.css";
 
 function Login() {
+  const backend = import.meta.env.VITE_BACKEND;
   const [cookies] = useCookies([]);
   const navigate = useNavigate();
   useEffect(() => {
@@ -23,7 +24,7 @@ function Login() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/login",
+        `${backend}/login`,
         {
           ...values,
         },
@@ -47,9 +48,9 @@ function Login() {
       <div className="card">
         <h2 className="title">Ingresa a tu cuenta</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <div class="field">
+          <div className="field">
             <svg
-              class="input-icon"
+              className="input-icon"
               viewBox="0 0 500 500"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -65,9 +66,9 @@ function Login() {
               }
             />
           </div>
-          <div class="field">
+          <div className="field">
             <svg
-              class="input-icon"
+              className="input-icon"
               viewBox="0 0 500 500"
               xmlns="http://www.w3.org/2000/svg"
             >
